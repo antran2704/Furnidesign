@@ -1,0 +1,195 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700;800;900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: figeronaThin;
+  font-weight: 100;
+  src: url("../fonts/Figerona-Thin.otf");
+}
+
+@font-face {
+  font-family: figeronaExtraLight;
+  font-weight: 200;
+  src: url("../fonts/Figerona-ExtraLight.otf");
+}
+
+@font-face {
+  font-family: figeronaRegular;
+  font-weight: 400;
+  src: url("../fonts/Figerona-Regular.otf");
+}
+
+@font-face {
+  font-family: figeronaMedium;
+  font-weight: 500;
+  src: url("../fonts/Figerona-Medium.otf");
+}
+
+@font-face {
+  font-family: figeronaSemiBold;
+  font-weight: 600;
+  src: url("../fonts/Figerona-SemiBold.otf");
+}
+
+@font-face {
+  font-family: figeronaBold;
+  font-weight: 700;
+  src: url("../fonts/Figerona-Bold.otf");
+}
+
+@font-face {
+  font-family: figeronaExtraBold;
+  font-weight: 800;
+  src: url("../fonts/Figerona-ExtraBold.otf");
+}
+
+@font-face {
+  font-family: figeronaBlack;
+  font-weight: 900;
+  src: url("../fonts/Figerona-Black.otf");
+}
+
+html {
+  -webkit-tap-highlight-color: transparent;
+  overflow-x: hidden;
+  overflow-y: overlay;
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-y: overlay;
+  overflow-x: hidden;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  overflow: overlay;
+}
+
+body::-webkit-scrollbar {
+  background-color: transparent;
+  width: 6px;
+  height: 2px;
+  overflow: overlay;
+}
+
+.sroll::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  overflow: overlay;
+}
+
+.scroll::-webkit-scrollbar {
+  background-color: transparent;
+  width: 4px;
+  height: 6px;
+  overflow: overlay;
+}
+
+.scroll::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  overflow: overlay;
+}
+
+.scrollHidden::-webkit-scrollbar {
+  background-color: transparent;
+  width: 1px;
+  height: 1px;
+  overflow: overlay;
+}
+
+/* custome input type checkbox */
+input[type="checkbox"]:checked {
+  background-color: #1e1e1e;
+}
+
+input[type="checkbox"] {
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: 0;
+  background: white;
+  height: 24px;
+  width: 24px;
+  border: 2px solid #e5e5e5;
+  color: white;
+  border-radius: 4px;
+}
+
+input[type="checkbox"]:after {
+  content: " ";
+  position: relative;
+  left: 32%;
+  top: 20%;
+  width: 38%;
+  height: 38%;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(44deg);
+  display: none;
+}
+
+input[type="checkbox"]:checked {
+  border: 0px solid #e5e5e5;
+}
+
+input[type="checkbox"]:checked:after {
+  display: block;
+}
+
+/* skelaton loading */
+.skelaton {
+  position: relative;
+  background-color: #f5f5f5;
+  overflow: hidden;
+}
+
+.skelaton::after {
+  display: block;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform: translateX(-100%);
+  animation: 2s loading linear 0.5s infinite;
+  background: linear-gradient(90deg, transparent, #ededed, transparent);
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  transform: translateX(-100%);
+  z-index: 1;
+}
+
+.skelaton__content {
+  height: 18px;
+  margin: 10px 0;
+}
+
+.skelaton__short {
+  width: 40%;
+}
+
+.skelaton__title {
+  width: 100%;
+}
+
+@keyframes loading {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  60% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(100%);
+  }
+}
